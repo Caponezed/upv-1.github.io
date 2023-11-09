@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск клапанов УПВ-1</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/fonts/ibm-plex-serif/fonts.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        class="header-logo"
+        src="/resources/upv-logo.svg"
+        alt="Сгенерированный логотип установки УПВ-1"
+      />
+    </header>
+    <div style="height: 0px; visibility: hidden">Ты меня не видишь :-)</div>
+    <div class="wrapper">
+      <h1 class="site-heading">Поиск клапанов</h1>
+      <div class="input-container">
+        <div class="col-3">
+          <input
+            id="search-input"
+            class="effect-9"
+            list="valves"
+            type="text"
+            placeholder="Клапан"
+          />
+          <span class="focus-border">
+            <i></i>
+          </span>
+        </div>
+        <button class="input-button bubbly-button">Поиск</button>
+      </div>
+      <div class="valve-container">
+        <div class="img-wrapper">
+          <img class="valve-photo" src="/resources/placeholder.png" alt=" " />
+        </div>
+
+        <div class="inner-info-container">
+          <h2 class="valve-number"></h2>
+          <div class="text-wrapper">
+            <h3 class="valve-text-heading"></h3>
+            <p class="valve-location"></p>
+          </div>
+          <div class="text-wrapper">
+            <h3 class="valve-text-heading"></h3>
+            <p class="valve-use"></p>
+          </div>
+          <div class="text-wrapper">
+            <h3 class="valve-text-heading"></h3>
+            <p class="valve-type"></p>
+          </div>
+          <div class="text-wrapper">
+            <h3 class="valve-text-heading"></h3>
+            <p class="valve-shutdown-reason"></p>
+          </div>
+          <div class="text-wrapper">
+            <h3 class="valve-importance"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
