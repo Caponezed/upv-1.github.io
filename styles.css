@@ -4,12 +4,11 @@
 }
 
 html {
-  font-family: "IBM Plex Serif", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 body {
   padding: 0px 16px;
   font-size: 2rem;
-  /* color: white; */
   background: #757f9a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
