@@ -895,7 +895,9 @@ async function updateContent() {
     const valve = searchItem(valves);
     if (!valve) {
       toggleLoadingPlaceholder();
-      const fetchedKittyImage = await fetch(`/resources/saddy-kitty.jpg`);
+      const fetchedKittyImage = await fetch(
+        `https://github.com/Caponezed/upv-1.github.io/blob/main/resources/saddy-kitty.jpg`
+      );
       valvePhoto.src = fetchedKittyImage.url;
       valveContainer.style.display = "grid";
       toggleLoadingPlaceholder();
@@ -917,7 +919,9 @@ async function updateContent() {
     }
 
     toggleLoadingPlaceholder();
-    const fetchedValvePhoto = await fetch(`/valves/${valve.number}-min.jpg`);
+    const fetchedValvePhoto = await fetch(
+      `https://github.com/Caponezed/upv-1.github.io/blob/main/valves/${valve.number}-min.jpg`
+    );
     valvePhoto.src = fetchedValvePhoto.url;
     valveContainer.style.display = "grid";
     toggleLoadingPlaceholder();
