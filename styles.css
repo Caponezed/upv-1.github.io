@@ -1,6 +1,8 @@
 :root {
   --input-border-color: #000;
   --button-color: #fff;
+  --valve-number-desktop-size: 6rem;
+  --valve-number-mobile-size: 2rem;
 }
 
 html {
@@ -55,6 +57,7 @@ p {
 .site-heading {
   font-size: 4rem;
   text-align: center;
+  line-height: 1;
 }
 .wrapper {
   display: flex;
@@ -73,66 +76,50 @@ p {
   border-radius: 4px;
   box-shadow: 0 2px 25px hsl(0deg 50% 0% / 0.5);
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.valve-heading {
-  font-size: 2.5rem;
-}
 .valve-container {
+  display: grid;
   visibility: hidden;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 }
+.valve-container_theme-1column {
+  grid-template-columns: 1fr;
+}
 .img-wrapper {
   justify-self: end;
-  max-width: 640px;
-  min-width: 400px;
-  min-height: 400px;
+  will-change: background-color;
   border-radius: 8px;
 }
 .img-wrapper_theme-loading {
-  visibility: revert;
-  animation: background-loading 0.8s linear infinite alternate;
+  width: 40ch;
+  min-height: 400px;
   background-color: #f9fafb;
+  animation: background-loading 0.8s linear infinite alternate;
+  box-shadow: 0 2px 25px hsl(0deg 50% 0% / 0.3);
 }
 .valve-photo {
-  object-position: 50% 20%;
+  max-width: 720px;
   border-radius: 8px;
+  box-shadow: 0 2px 25px hsl(0deg 50% 0% / 0.3);
 }
 .valve-photo_theme-loading {
   visibility: hidden;
 }
-.inner-info-container {
+.info-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transform: translateY(-10px);
+  max-width: 40ch;
+  transform: translateY(-15px);
 }
-
-@media (max-width: 75rem) {
-  .valve-container {
-    grid-template-columns: 1fr;
-  }
-  .img-wrapper {
-    justify-self: center;
-  }
+.valve-number {
+  font-size: var(--valve-number-desktop-size);
+  line-height: 1;
+  transform: translateX(-5px);
 }
-@media (max-width: 37.5rem) {
-  body {
-    font-size: 1.5rem;
-  }
-  .site-heading {
-    font-size: 2rem;
-    line-height: 1.1;
-  }
-  .img-wrapper {
-    min-width: 250px;
-    min-height: 250px;
-  }
+.valve-number_theme-small {
+  font-size: revert;
+  line-height: 1.15;
 }
 
 /* Styles for button */
@@ -334,3 +321,38 @@ p {
   }
 }
 /* ---- */
+
+@media (max-width: 75rem) {
+  .valve-container {
+    width: min(100%, 40ch);
+    grid-template-columns: 1fr;
+  }
+  .img-wrapper_theme-loading {
+    width: 100%;
+  }
+  .valve-photo {
+    max-width: 100%;
+  }
+}
+@media (max-width: 37.5rem) {
+  body {
+    font-size: 1.5rem;
+  }
+
+  .site-heading {
+    font-size: 2.5rem;
+  }
+  .inner-info-container {
+    transform: translateX(-2px);
+  }
+  .valve-number {
+    font-size: var(--valve-number-mobile-size);
+    line-height: 1.1;
+    transform: translateX(-2px);
+  }
+}
+@media (max-width: 23.125rem) {
+  .site-heading {
+    font-size: 2rem;
+  }
+}
