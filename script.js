@@ -46,6 +46,10 @@ async function updateContent() {
     }
 
     const fetchedValvePhoto = await fetch(`valves/${valve.number}-min.jpg`);
+    if (!fetchedValvePhoto.ok) {
+      valvePhoto.src = `https://placehold.co/720x400?text=Фото+отсутствует :(`; // Здесь нужно поставить заглушку (не котика)
+      return;
+    }
     valvePhoto.src = fetchedValvePhoto.url;
 
     return true;
@@ -59,14 +63,12 @@ function loadOnCompletePhoto() {
 
   const valve = searchItem(valves);
   if (!valve) {
-    valveNumber.classList.add("valve-number_theme-small");
     clearInfoText();
     valveNumber.textContent =
       "Такой клапан не существует либо ещё не был добавлен";
     return;
   }
 
-  valveNumber.classList.remove("valve-number_theme-small");
   addInfoText(valve);
 }
 function searchItem(array) {

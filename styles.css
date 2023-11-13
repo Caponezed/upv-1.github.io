@@ -1,8 +1,9 @@
 :root {
   --input-border-color: #000;
   --button-color: #fff;
-  --valve-number-desktop-size: 6rem;
-  --valve-number-mobile-size: 2rem;
+  --font-size-desktop: 6rem;
+  --font-size-tablet: 4rem;
+  --font-size-mobile: 3rem;
 }
 
 html {
@@ -113,13 +114,9 @@ p {
   transform: translateY(-15px);
 }
 .valve-number {
-  font-size: var(--valve-number-desktop-size);
+  font-size: var(--font-size-desktop);
   line-height: 1;
   transform: translateX(-5px);
-}
-.valve-number_theme-small {
-  font-size: revert;
-  line-height: 1.15;
 }
 
 /* Styles for button */
@@ -340,19 +337,22 @@ p {
   }
 
   .site-heading {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
   .inner-info-container {
     transform: translateX(-2px);
   }
   .valve-number {
-    font-size: var(--valve-number-mobile-size);
+    font-size: var(--font-size-tablet);
     line-height: 1.1;
     transform: translateX(-2px);
   }
 }
 @media (max-width: 23.125rem) {
   .site-heading {
-    font-size: 2rem;
+    font-size: 2.25rem;
+  }
+  .valve-number {
+    font-size: var(--font-size-mobile);
   }
 }
